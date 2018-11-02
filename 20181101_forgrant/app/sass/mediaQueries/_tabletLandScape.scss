@@ -1,0 +1,12 @@
+@media only screen and (max-width: 1024px) {
+	header h1 {
+		text-align: left;
+	}
+
+	.multiblock-s {
+		.section-wrapper {
+			flex-wrap: wrap;
+			justify-content: center;
+		}
+	}
+}

@@ -1,0 +1,26 @@
+@media only screen and (max-width: 768px) {
+	header {
+		.section-wrapper {
+			flex-direction: column;
+			margin: 20px auto 0;
+		}
+
+		h1 {
+			text-align: center;
+		}
+
+		.selection-b {
+			margin-top: 20px;
+		}
+	}
+
+	#ulWrapper {
+		width: 250px;
+		margin-left: 0;
+	}
+
+	.block-item {
+		width: 280px;
+		min-width: 280px;
+	}
+}

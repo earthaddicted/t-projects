@@ -1,0 +1,11 @@
+.DS_STORE
+*.log
+node_modules
+../node_modules
+../../node_modules
+build/
+.idea
+package-lock.json
+yarn.lock
+*.psd
+.psd
