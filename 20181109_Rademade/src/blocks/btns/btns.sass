@@ -1,0 +1,47 @@
+// // btns style
+
+.btns-block
+	display: -webkit-flex
+	display: -moz-flex
+	display: -ms-flex
+	display: -o-flex
+	display: flex
+	margin: 0 10px
+
+	&__item
+		display: flex
+		position: relative
+		margin-left: 7px
+		border-radius: 3px
+
+	img
+		display: block
+		margin-left: 12px
+
+	&.light
+		border-radius: 3px
+		border: 1px solid #3c52c9
+
+		.btns-block__item
+			color: #3c52c9
+
+	&.dark
+		text-transform: uppercase
+		border-radius: 4px
+		background-color: #3d61ff
+
+		.btns-block__item
+			color: #fff
+			padding: 5px 35px
+
+	&.add
+		margin: 0 8px
+		font-size: 18px
+		font-weight: 600
+
+	&.back
+		.btns-block__item
+			font-size: 12.6px
+			padding: 4px 16px 5px 0
+
+

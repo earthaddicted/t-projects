@@ -1,0 +1,15 @@
+mixin b-asidemenu(navmenu)
+	+b('nav').nav
+		+e('ul').menu
+			if globals.navmenu.menu
+				each item in globals.navmenu.menu
+					+menu_item(item)
+
+mixin menu_item(menuItem)
+	+e('li').item
+		+e.link(href=menuItem.url)= menuItem.title
+		if menuItem.subnav
+			+b('ul').submenu
+				each item in menuItem.subnav
+					+e('li').item
+						+e.link(href=item.url)= item.title

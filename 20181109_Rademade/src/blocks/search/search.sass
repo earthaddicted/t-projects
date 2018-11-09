@@ -1,0 +1,65 @@
+/* search-panel */
+
+.search-panel
+	display: flex
+	align-items: center
+	padding: 25px 2px
+
+	&__search
+		display: flex
+		flex-grow: 2
+		align-items: center
+
+	&__input
+		margin-right: 12px
+
+	&__result
+		&-num
+			padding: 0 9px
+			font-size: 14px
+			font-weight: bold
+			color: #3c52c9
+
+		&-text
+			padding: 0 9px 0 0
+			font-size: 14px
+			font-weight: bold
+			color: rgba(0, 0, 0, .37)
+			letter-spacing: 0.6px
+
+.form
+	&-group
+		display: flex
+		background: #fff
+		border-radius: 2px
+
+	&-control
+		width: 222px
+		min-width: 220px
+		min-height: 44px
+		padding: 0 0 0 18px
+		font-size: 13px
+		font-weight: bold
+		color: rgba(0, 0, 0, .37)
+		border: 0
+
+		&::placeholder
+			color: rgba(0, 0, 0, .14)
+
+	&-search-submit
+		position: relative
+		width: 56px
+		height: 44px
+		min-width: 56px
+		cursor: pointer
+		background: #fff
+		border: 0
+
+		img
+			position: absolute
+			top: 12px
+			left: 18px
+			width: 20px
+			height: 20px
+
+/* search-panel END */
