@@ -6,7 +6,7 @@ mixin b-asidemenu(navmenu)
 					+menu_item(item)
 
 mixin menu_item(menuItem)
-	+e('li').item
+	+e('li').item(class = menuItem.isActive ? 'active' : '')
 		+e.link(href=menuItem.url)= menuItem.title
 		if menuItem.subnav
 			+b('ul').submenu

@@ -18,18 +18,15 @@
 .nav__item {
   transition: .2s ease-in-out;
   margin: 0 0 7px; }
-  .nav__item:hover .nav__link, .nav__item:focus .nav__link,
-  .nav__item .active .nav__link {
+  .nav__item:hover .nav__link, .nav__item:focus .nav__link, .nav__item.active .nav__link {
     background-color: #2438ab;
     color: white; }
-  .nav__item:hover .submenu, .nav__item:focus .submenu,
-  .nav__item .active .submenu {
+  .nav__item:hover .submenu, .nav__item:focus .submenu, .nav__item.active .submenu {
     height: auto;
     opacity: 1;
     transform: translate(0%, 0%);
     z-index: 1; }
-    .nav__item:hover .submenu__link, .nav__item:focus .submenu__link,
-    .nav__item .active .submenu__link {
+    .nav__item:hover .submenu__link, .nav__item:focus .submenu__link, .nav__item.active .submenu__link {
       color: white; }
 
 .nav__link {
