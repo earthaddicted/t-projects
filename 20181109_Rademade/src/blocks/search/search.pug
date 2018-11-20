@@ -1,13 +1,8 @@
 mixin b-search()
-	+b.search-panel
-		+e.search
+	+b.search
+		+e.container
 			+e.input
-				//- form for search
-				form(method='' action='')
-					div.form-group
-						input#search.form-control(type='text', placeholder='Search for something…')
-						button.form-search-submit(type="submit")
-							img(src="assets/svg/search.svg" alt="Search")
+				+b-form()
 
 			+e.result
 				+e('span').result-num 4

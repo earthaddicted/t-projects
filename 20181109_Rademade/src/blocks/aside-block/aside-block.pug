@@ -1,10 +1,10 @@
 mixin b-asideBlock(data)
-	+b.aside-wrapper
-		+b.logo.top-part
+	+b.aside-block
+		+e.logo.top-part
 			+e('a').item(href="/")
 				img(src=globals.logo alt=globals.logoAlt)
 				//- +e.text CRM
 				//- 	+b('span') test
 
-
-		+b-asidemenu(globals.navmenu)
+		+e.menu
+			+b-aside-block__menu(globals.navmenu)
