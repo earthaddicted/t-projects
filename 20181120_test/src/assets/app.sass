@@ -96,7 +96,7 @@ $darkColorD: rgb(52,58,64)
 		span,
 		i
 			color: $currentTextColor
-			transition: .3s ease-in-out;
+			transition: color .3s ease-in-out;
 
 		a
 			&:hover
@@ -117,6 +117,11 @@ $darkColorD: rgb(52,58,64)
 		a,
 		button,
 		span
+			color: $currentTextColor
+
+		.btn-outline-secondary:not(:disabled):not(.disabled):active, 
+		.btn-outline-secondary:not(:disabled):not(.disabled).active, 
+		.show > .btn-outline-secondary.dropdown-toggle
 			color: $currentTextColor
 
 	.move-arrow

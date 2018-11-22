@@ -9,10 +9,12 @@ mixin b-asideBlock(data)
 		input(type="checkbox" id="pc-ln-menustate" class="pc-ln-menustate")
 
 		+b.move-arrow#pc-localnav
-			.pc-ln-action.pc-ln-action-menucta(aria-hidden="true")
+			.pc-ln-ac
+
 				label(for="pc-ln-menustate" class="pc-ln-menucta")
-					span.pc-ln-menucta-chevron
-					span.pc-ln-menucta-chevron
+					+e.wrapper
+						span.pc-ln-menucta-chevron
+						span.pc-ln-menucta-chevron
 
 		+b('nav').sidebar.bd-sidebar
 

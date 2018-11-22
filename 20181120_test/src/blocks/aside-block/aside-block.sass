@@ -69,16 +69,55 @@
 			-o-transition: width .3s cubic-bezier(.55, 0, .1, 1);
 			transition: width .3s cubic-bezier(.55, 0, .1, 1);
 
+			@media screen and (max-width: 812px)
+				.pc-ln-menucta-chevron
+					transform: translateY(-27%)
+
+
+				#pc-ln-menustate:checked ~ .move-arrow .pc-ln-menucta-chevron::after, 
+				#pc-ln-menustate:target ~ .move-arrow .pc-ln-menucta-chevron::after
+					left: 50%;
+					-webkit-transform-origin: 0% 100%;
+					-ms-transform-origin: 0% 100%;
+					transform-origin: 0% 100%;
+					-webkit-transform: rotate(-40deg) scaleY(1.5);
+					-ms-transform: rotate(-40deg) scaleY(1.5);
+					transform: rotate(-40deg) scaleY(1.5);
+
+				#pc-ln-menustate:checked ~ .move-arrow .pc-ln-menucta-chevron::before, 
+				#pc-ln-menustate:target ~ .move-arrow .pc-ln-menucta-chevron::before
+					right: 50%;
+					-webkit-transform-origin: 100% 100%;
+					-ms-transform-origin: 100% 100%;
+					transform-origin: 100% 100%;
+					-webkit-transform: rotate(40deg) scaleY(1.5);
+					-ms-transform: rotate(40deg) scaleY(1.5);
+					transform: rotate(40deg) scaleY(1.5)
+
+
+				#pc-ln-menustate:checked ~ .move-arrow .pc-ln-menucta-chevron, 
+				#pc-ln-menustate:target ~ .move-arrow .pc-ln-menucta-chevron
+					-webkit-transform: translateY(-27%);
+					-ms-transform: translateY(-27%);
+					transform: translateY(-16%);
+
 			.aside-block__header
 				padding: 10px 20px 0
 
 			.sidebar
-				a span
-					width: auto
-					visibility: visible
+				a 
+					display: block !important
+
+					i
+						margin-right: 20px
+
+					span
+						width: auto
+						visibility: visible
 
 			.app-version
 				padding: 18px 20px
+				text-align: left
 
 .nav
 	flex-direction: column
@@ -92,6 +131,8 @@
 	padding: 18px 10px;
 	white-space: nowrap;
 	transition: .3s ease-in
+	text-align: center
+	
 
 
 /*aside block END */
