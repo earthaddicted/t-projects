@@ -1,0 +1,41 @@
+mixin b-asideBlock(data)
+
+	+b.aside-block
+		+e.header.d-flex.flex-nowrap.flex-column.align-items-center.justify-content-center(a href="index.html")
+			+e.header-logo
+			+e.header-text CRM
+
+		input(type="checkbox" id="pc-gn-menustate" class="pc-gn-menustate")
+		input(type="checkbox" id="pc-ln-menustate" class="pc-ln-menustate")
+
+		+b.move-arrow#pc-localnav
+			.pc-ln-action.pc-ln-action-menucta(aria-hidden="true")
+				label(for="pc-ln-menustate" class="pc-ln-menucta")
+					span.pc-ln-menucta-chevron
+					span.pc-ln-menucta-chevron
+
+		+b('nav').sidebar.bd-sidebar
+
+			+b('ul').nav.bd-sidenav.list-unstyled
+				li
+					a(href="/")
+						i(class="far fa-calendar-alt")
+						span Dashboard
+
+				li
+					a(href="/")
+						i(class="far fa-list-alt")
+						span Forms
+
+				li
+					a(href="/")
+						i(class="fas fa-chart-bar")
+						span Charts
+
+				li
+					a(href="/")
+						i(class="fas fa-cog")
+						span Settings
+
+		p.app-version Version 1.0
+

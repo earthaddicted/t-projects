@@ -1,0 +1,13 @@
+extends main
+
+append params
+	- page = 'index'
+	- pageTitle = 'Home'
+
+block main
+
+	+b('section')
+		+b.container-fluid
+			+b.row.d-flex.flex-nowrap
+				+b-asideBlock()
+				+b-mainBlock()

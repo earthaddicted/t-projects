@@ -1,0 +1,208 @@
+
+// bootstrap settings
+// Required
+// @import "../node_modules/bootstrap/scss/functions";
+// @import "../node_modules/bootstrap/scss/_variables.scss";
+// @import "../node_modules/bootstrap/scss/_mixins.scss";
+
+// @import "../node_modules/bootstrap/scss/functions";
+// @import "../node_modules/bootstrap/scss/_variables";
+// @import "../node_modules/bootstrap/scss/_mixins";
+
+// // Optional
+// @import "../node_modules/bootstrap/scss/reboot";
+// @import "../node_modules/bootstrap/scss/type";
+// @import "../node_modules/bootstrap/scss/images";
+// @import "../node_modules/bootstrap/scss/code";
+// @import "../node_modules/bootstrap/scss/grid";
+// @import "../node_modules/bootstrap/scss/bootstrap";
+// @import "../node_modules/bootstrap/scss/input-group.scss";
+// @import "../node_modules/bootstrap/scss/forms.scss";
+@import '../../node_modules/bootstrap/scss/bootstrap.scss';
+
+// // bootstrap settings END
+
+@import '../blocks/aside-block/aside-block.sass';
+@import '../blocks/main-content/main-content.sass';
+@import '../blocks/navmenu/navmenu.sass';
+@import '../blocks/section/section.sass';
+@import '../blocks/info-panel/info-panel.sass';
+@import '../blocks/main-block/main-block.sass';
+@import '../blocks/btns/btns.sass';
+
+html,
+body
+	font-size: 26px !important
+	scroll-behavior: smooth
+	overflow: hidden
+
+a
+	text-decoration: none
+	cursor: pointer
+	transition: .2s ease-in-out
+
+	&:hover
+		text-decoration: none !important
+
+button.btn
+	cursor: pointer;
+
+img
+	max-width: 100%
+	height: auto
+
+.main > section
+	min-height: 100vh
+
+.container-fluid,
+.container-fluid > div
+	height: 100vh
+
+
+
+// light theme
+$lightpurple: rgb(212,217,227);
+$darkGrey: rgb(45, 48, 53);
+$currentTextColor: rgb(118, 121, 126);
+$currentTextColorTrasparent: rgba(255, 255, 255, .5);
+$currentTextInfoPanelColor: rgb(255, 255, 255);
+$currentPurple-transparent: rgba(36, 56, 171, .3);
+
+//dark theme
+$currentBgColorAsideD: rgb(73, 77, 83);
+$currentBgColorTopD: rgb(138,141,147);
+$currentBgMainContentD: rgb(240, 240, 240);
+$currentTextColorD: rgb(54, 54, 66);
+$currentTextColorTrasparentD: rgba(54, 54, 66, .5);
+$currentTextInfoPanelColorD: rgb(255, 255, 255);
+$manuNavAncorColorHoverD: rgba(36, 56, 171, .5);
+$currentPurple-transparentD: rgba(36, 56, 171, .3);
+$darkColorD: rgb(52,58,64)
+
+.theme-light
+	.aside-block
+		background: $lightpurple
+		border-color: $currentTextColorTrasparent
+		color: $currentTextColor
+
+		&__header
+			border-color: $currentTextColorTrasparent
+
+			&-logo
+				background: $currentTextColor
+	a,
+	.nav
+		a,
+		span,
+		i
+			color: $currentTextColor
+			transition: .3s ease-in-out;
+
+		a
+			&:hover
+				background: $currentPurple-transparent;
+
+				i
+					color: $currentTextColor;
+
+	.info-panel
+		background: $lightpurple
+		border-color: $currentTextColorTrasparent
+		color: $currentTextColor;
+
+		i
+			color: $lightpurple;
+			background: $currentTextColor;
+
+		a,
+		button,
+		span
+			color: $currentTextColor
+
+	.move-arrow
+		background: $currentPurple-transparent;
+
+
+	.pc-ln-menucta-chevron
+		&::before,
+		&::after
+			background: $currentTextInfoPanelColor
+
+.theme-dark
+	.aside-block
+		background: $currentBgColorAsideD;
+		border-color: $currentTextColorTrasparentD
+		color: #fff;
+
+		&__header
+			border-color: $currentTextColorTrasparentD
+	a,
+	.nav
+		a,
+		span
+			color: $currentTextInfoPanelColorD
+
+		a
+			&:hover
+				background: $currentPurple-transparentD
+
+
+	.info-panel
+		background: $currentBgColorAsideD
+		border-color: $currentTextColorTrasparentD
+		color: #fff;
+
+		i
+			color: $currentBgColorAsideD
+			background: $currentTextInfoPanelColorD
+
+		a,
+		button,
+		span
+			color: $currentTextInfoPanelColorD
+
+
+	.move-arrow
+		background: $currentPurple-transparentD;
+
+
+	.pc-ln-menucta-chevron
+		&::before,
+		&::after
+			background: $currentBgMainContentD
+
+	.main-content,
+	.main-block
+		background: $darkColorD
+		color: $currentTextInfoPanelColorD
+
+.font-small
+	font-size: 1rem !important
+
+	#my_btn-bg
+		min-width: 7rem
+
+		@media screen and (max-width: 812px)
+			min-width: 4rem !important
+
+	@media screen and (max-width: 812px)
+		font-size: 0.5rem !important
+
+	.btn-sm, .btn-group-sm > .btn
+		font-size: inherit !important
+
+
+.font-large
+	font-size: 1.2rem !important
+
+	#my_btn-bg
+		min-width: 7rem
+
+		@media screen and (max-width: 812px)
+			min-width: 4rem !important
+
+	@media screen and (max-width: 812px)
+		font-size: 0.7rem !important
+
+	.btn-sm, .btn-group-sm > .btn
+		font-size: inherit !important

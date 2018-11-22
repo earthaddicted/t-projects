@@ -1,0 +1,96 @@
+/* aside block */
+.aside
+	&-block
+		display: -webkit-flex
+		display: -moz-flex
+		display: -ms-flex
+		display: -o-flex
+		display: flex
+		flex-direction: column
+		position: relative
+		height: 100vh
+		max-width: 4rem
+		width: 4em
+		overflow-y: auto
+		flex-shrink: 0
+		z-index: 1000
+		position: relative
+		padding-left: 0
+		padding-right: 0
+		border-width: 0
+		border-style: solid
+		border-right-width: 1px
+		transition: .1s ease
+
+		@media screen and (max-width: 812px)
+			position: absolute
+			top: 0
+			left: 0
+			bottom: 0
+			width: 64px
+
+		&__header
+			display: block
+			padding: 10px 5px 0
+			border-style: solid;
+			border-width: 0;
+			border-bottom-width: 1px;
+			max-height: 5.3rem;
+			min-height: 5.3rem;
+
+			@media screen and (max-width: 812px)
+				max-height: 3.3rem;
+				min-height: 3.3rem;
+
+			&-logo
+				display: block
+				width: 40px
+				height: 40px
+				border-radius: 50%
+				overflow: hidden
+				margin: auto
+				background: white
+				padding: 4px
+
+			&-text
+				display: block
+				padding: 5px
+				text-align: center
+				font-weight:  600
+
+		&.show
+			max-width: 100%;
+			width: 15rem;
+			opacity: 1;
+			-webkit-transition: width .3s cubic-bezier(.55, 0, .1, 1);
+			-moz-transition: width .3s cubic-bezier(.55, 0, .1, 1);
+			-ms-transition: width .3s cubic-bezier(.55, 0, .1, 1);
+			-o-transition: width .3s cubic-bezier(.55, 0, .1, 1);
+			transition: width .3s cubic-bezier(.55, 0, .1, 1);
+
+			.aside-block__header
+				padding: 10px 20px 0
+
+			.sidebar
+				a span
+					width: auto
+					visibility: visible
+
+			.app-version
+				padding: 18px 20px
+
+.nav
+	flex-direction: column
+	position: sticky
+	width: auto
+	top: 0
+	margin: 0 0 20px
+
+.app-version
+	margin-bottom: 0
+	padding: 18px 10px;
+	white-space: nowrap;
+	transition: .3s ease-in
+
+
+/*aside block END */
