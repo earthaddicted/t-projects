@@ -1,24 +1,60 @@
-function themeSwitcher(btnId) {
+// function themeSwitcher(btnId) {
+// 	if (btnId == "#my_btn-font") {
+// 		var isBig = $("#my_btn-font").text() == "A/a";
+// 		var newTitle = isBig ? 'a/A' : 'A/a';
+// 		$("#my_btn-font").html(newTitle);
+// 	} else if (btnId == "#my_btn-bg") {
+// 		var isLight = $("#my_btn-bg").text() != "Dark Theme";
+// 		// var newTitle = isLight ? 'Dark Theme' : 'Light Theme';
+
+// 		var isLight = $("#my_btn-bg").text() != "Dark Theme";
+// 		var newTitle = isLight ? 'Dark Theme' : 'Light Theme'
+// 		$("#my_btn-bg").html(newTitle);
+// 	} else {
+// 		throw "unexpected Id";
+// 	}
+
+// 	var isBig = $("#my_btn-font").text() == "A/a";
+// 	var isLight = $("#my_btn-bg").text() == "Light Theme";
+
+// 	$(".main").removeClass(!isLight ? "theme-light" : "theme-dark");
+// 	$(".main").addClass(isLight ? "theme-light" : "theme-dark");
+
+// 	$(".main").removeClass(!isBig ? "font-large" : "font-small");
+// 	$(".main").addClass(isBig ? "font-large" : "font-small");
+// }
+
+// 
+function themeSwitcherFonts(btnId) {
 	if (btnId == "#my_btn-font") {
 		var isBig = $("#my_btn-font").text() == "A/a";
 		var newTitle = isBig ? 'a/A' : 'A/a';
 		$("#my_btn-font").html(newTitle);
-	} else if (btnId == "#my_btn-bg") {
+	} else {
+		throw "unexpected Id";
+}
+
+	var isBig = $("#my_btn-font").text() == "A/a";
+
+	$(".main").removeClass(!isBig ? "font-large" : "font-small");
+	$(".main").addClass(isBig ? "font-large" : "font-small");
+}
+
+function themeSwitcherBg(btnId) {
+	if (btnId == "#my_btn-bg") {
 		var isLight = $("#my_btn-bg").text() != "Dark Theme";
 		var newTitle = isLight ? 'Dark Theme' : 'Light Theme';
+
 		$("#my_btn-bg").html(newTitle);
 	} else {
 		throw "unexpected Id";
 	}
 
-	var isBig = $("#my_btn-font").text() == "A/a";
 	var isLight = $("#my_btn-bg").text() == "Light Theme";
 
 	$(".main").removeClass(!isLight ? "theme-light" : "theme-dark");
 	$(".main").addClass(isLight ? "theme-light" : "theme-dark");
 
-	$(".main").removeClass(!isBig ? "font-large" : "font-small");
-	$(".main").addClass(isBig ? "font-large" : "font-small");
 }
 
 function expandCollapseHandler() {
@@ -32,11 +68,11 @@ function expandCollapseHandler() {
 
 function initEventHandlers() {
 	$("#my_btn-font").on("click", function() {
-		themeSwitcher("#my_btn-font");
+		themeSwitcherFonts("#my_btn-font");
 	});
 
 	$("#my_btn-bg").on("click", function() {
-		themeSwitcher("#my_btn-bg");
+		themeSwitcherBg("#my_btn-bg");
 	});
 
 	$(".move-arrow").on("click", expandCollapseHandler);
