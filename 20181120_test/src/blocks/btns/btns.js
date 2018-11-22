@@ -1,7 +1,7 @@
 function themeSwitcher(btnId) {
 	if (btnId == "#my_btn-font") {
 		var isBig = $("#my_btn-font").text() == "A/a";
-		var newTitle = isBig ? 'a/A' : 'A/a';
+		var newTitle = isBig ? 'A/a' : 'a/A';
 		$("#my_btn-font").html(newTitle);
 	} else if (btnId == "#my_btn-bg") {
 		var isLight = $("#my_btn-bg").text() != "Dark Theme";

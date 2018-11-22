@@ -6333,7 +6333,8 @@ a.text-dark:hover, a.text-dark:focus {
   border-width: 0;
   border-style: solid;
   border-right-width: 1px;
-  transition: .1s ease; }
+  transition: .1s ease;
+  overflow-x: hidden; }
   @media screen and (max-width: 812px) {
     .aside-block {
       position: absolute;
