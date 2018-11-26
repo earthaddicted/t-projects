@@ -80,6 +80,7 @@ a,
 button,
 .btn {
   -webkit-transition: ease-out .3s;
+  -o-transition: ease-out .3s;
   transition: ease-out .3s;
   cursor: pointer; }
 
@@ -177,6 +178,7 @@ h3 {
   text-align: center;
   cursor: pointer;
   -webkit-transition: all .3s ease-in-out;
+  -o-transition: all .3s ease-in-out;
   transition: all .3s ease-in-out;
   opacity: 0;
   visibility: hidden;
@@ -187,6 +189,7 @@ h3 {
     .arrow-top svg path {
       fill: white;
       -webkit-transition: all .3s ease-in-out;
+      -o-transition: all .3s ease-in-out;
       transition: all .3s ease-in-out; }
   .arrow-top:hover {
     background: white;
@@ -256,6 +259,7 @@ header {
           border-radius: 3px;
   border: 2px solid transparent;
   -webkit-transition: ease-out .3s;
+  -o-transition: ease-out .3s;
   transition: ease-out .3s; }
   .form-control:placeholder {
     color: #919191; }
@@ -275,6 +279,7 @@ header {
   background: #0099d2;
   border: 0;
   -webkit-transition: ease-out .3s;
+  -o-transition: ease-out .3s;
   transition: ease-out .3s; }
   .form-search-submit img {
     position: absolute;
@@ -311,6 +316,7 @@ header {
       letter-spacing: -0.8px;
       text-transform: capitalize;
       -webkit-transition: ease-out .3s;
+      -o-transition: ease-out .3s;
       transition: ease-out .3s; }
       .user-block__item-text:hover,
       .user-block__item-text span:hover {
@@ -356,6 +362,7 @@ header {
           transform: translateY(6px);
   background: #0099d2;
   -webkit-transition: all 0ms 300ms;
+  -o-transition: all 0ms 300ms;
   transition: all 0ms 300ms; }
   .hamburger-menu.animate {
     background: rgba(255, 255, 255, 0); }
@@ -368,6 +375,7 @@ header {
   background: #0099d2;
   -webkit-transition: bottom 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1), -webkit-transform 300ms cubic-bezier(0.23, 1, 0.32, 1);
   transition: bottom 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1), -webkit-transform 300ms cubic-bezier(0.23, 1, 0.32, 1);
+  -o-transition: bottom 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1), transform 300ms cubic-bezier(0.23, 1, 0.32, 1);
   transition: bottom 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1), transform 300ms cubic-bezier(0.23, 1, 0.32, 1);
   transition: bottom 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1), transform 300ms cubic-bezier(0.23, 1, 0.32, 1), -webkit-transform 300ms cubic-bezier(0.23, 1, 0.32, 1); }
 
@@ -379,6 +387,7 @@ header {
   background: #0099d2;
   -webkit-transition: top 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1), -webkit-transform 300ms cubic-bezier(0.23, 1, 0.32, 1);
   transition: top 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1), -webkit-transform 300ms cubic-bezier(0.23, 1, 0.32, 1);
+  -o-transition: top 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1), transform 300ms cubic-bezier(0.23, 1, 0.32, 1);
   transition: top 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1), transform 300ms cubic-bezier(0.23, 1, 0.32, 1);
   transition: top 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1), transform 300ms cubic-bezier(0.23, 1, 0.32, 1), -webkit-transform 300ms cubic-bezier(0.23, 1, 0.32, 1); }
 
@@ -389,6 +398,7 @@ header {
           transform: rotate(45deg);
   -webkit-transition: top 300ms cubic-bezier(0.23, 1, 0.32, 1), -webkit-transform 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1);
   transition: top 300ms cubic-bezier(0.23, 1, 0.32, 1), -webkit-transform 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1);
+  -o-transition: top 300ms cubic-bezier(0.23, 1, 0.32, 1), transform 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1);
   transition: top 300ms cubic-bezier(0.23, 1, 0.32, 1), transform 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1);
   transition: top 300ms cubic-bezier(0.23, 1, 0.32, 1), transform 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1), -webkit-transform 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1); }
 
@@ -399,6 +409,7 @@ header {
           transform: rotate(-45deg);
   -webkit-transition: bottom 300ms cubic-bezier(0.23, 1, 0.32, 1), -webkit-transform 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1);
   transition: bottom 300ms cubic-bezier(0.23, 1, 0.32, 1), -webkit-transform 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1);
+  -o-transition: bottom 300ms cubic-bezier(0.23, 1, 0.32, 1), transform 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1);
   transition: bottom 300ms cubic-bezier(0.23, 1, 0.32, 1), transform 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1);
   transition: bottom 300ms cubic-bezier(0.23, 1, 0.32, 1), transform 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1), -webkit-transform 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1); }
 
@@ -445,6 +456,7 @@ header {
                 transform: rotate(90deg);
         -webkit-transition: -webkit-transform .3s ease-in-out;
         transition: -webkit-transform .3s ease-in-out;
+        -o-transition: transform .3s ease-in-out;
         transition: transform .3s ease-in-out;
         transition: transform .3s ease-in-out, -webkit-transform .3s ease-in-out; }
       .nav-menu__block-bottom__categories .nav-menu__item-bottom:nth-of-type(n+2)::after {
@@ -575,6 +587,7 @@ a,
 button,
 .btn {
   -webkit-transition: ease-out .3s;
+  -o-transition: ease-out .3s;
   transition: ease-out .3s;
   cursor: pointer; }
 
@@ -672,6 +685,7 @@ h3 {
   text-align: center;
   cursor: pointer;
   -webkit-transition: all .3s ease-in-out;
+  -o-transition: all .3s ease-in-out;
   transition: all .3s ease-in-out;
   opacity: 0;
   visibility: hidden;
@@ -682,6 +696,7 @@ h3 {
     .arrow-top svg path {
       fill: white;
       -webkit-transition: all .3s ease-in-out;
+      -o-transition: all .3s ease-in-out;
       transition: all .3s ease-in-out; }
   .arrow-top:hover {
     background: white;
@@ -760,6 +775,7 @@ h3 {
             border-radius: 50%;
     border: 0 solid transparent;
     -webkit-transition: ease-out .3s;
+    -o-transition: ease-out .3s;
     transition: ease-out .3s;
     min-height: 28px;
     min-width: 28px;
@@ -894,6 +910,7 @@ h3 {
       color: white;
       background-color: white;
       -webkit-transition: all .3s ease;
+      -o-transition: all .3s ease;
       transition: all .3s ease; }
       .slick-dots li button:focus {
         outline: none; }
@@ -1111,6 +1128,7 @@ h3 {
     background: rgba(0, 153, 210, 0);
     -webkit-transition: background 1.2s ease-in, -webkit-transform .3s ease-in;
     transition: background 1.2s ease-in, -webkit-transform .3s ease-in;
+    -o-transition: transform .3s ease-in, background 1.2s ease-in;
     transition: transform .3s ease-in, background 1.2s ease-in;
     transition: transform .3s ease-in, background 1.2s ease-in, -webkit-transform .3s ease-in; }
   .slider-item img {

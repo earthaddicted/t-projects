@@ -126,7 +126,7 @@ $(function() {
 		.setTween(tlAppearItem)
 		.addTo(controller);
 
-	scene.addIndicators();
+	// scene.addIndicators();
 
 })(jQuery);
 
