@@ -4,11 +4,12 @@
 	.content-wrapper {
 		display: block;
 		padding: 65px 0 1px;
+		overflow: hidden;
 
 		h3 {
 			display: block;
 			text-transform: uppercase;
-			letter-spacing: 0.7px;
+			letter-spacing: 0;
 		}
 	}
 }
