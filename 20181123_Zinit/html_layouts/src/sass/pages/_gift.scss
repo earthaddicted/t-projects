@@ -1,0 +1,45 @@
+/* ============= gift section END ============= */
+
+.gift-section {
+	.content-wrapper {
+		justify-content: center;
+		align-items: center;
+		padding: 8px 20px;
+		background: $lightblue;
+		border-top: 5px solid $white;
+		border-bottom: 5px solid $white;
+	}
+
+	.img-item {
+		max-width: 34px;
+		width: 34px;
+		margin: 0 20px;
+	}
+
+	a {
+		color: #000;
+		text-decoration: underline;
+
+		&:active,
+		&:focus,
+		&:visited {
+			color: #000;
+		}
+
+		&:hover {
+			text-decoration: none;
+		}
+	}
+
+	p {
+		font-weight: 300;
+	}
+
+	b {
+		font-weight: 700;
+		text-transform: uppercase;
+		letter-spacing: 1.5px;
+	}
+}
+
+/* ============= gift section END ============= */

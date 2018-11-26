@@ -1,0 +1,43 @@
+
+/* ============= banner parallax section ============= */
+.banner {
+	&-content {
+		display: block;
+		position: relative;
+		width: 100%;
+		max-width: 560px;
+		height: 100%;
+		margin: auto;
+		text-align: center;
+
+		h2 {
+			padding-top: 4.6rem;
+		}
+
+		p {
+			padding: 20px;
+			color: #919191;
+			font-size: 16px;
+			font-weight: 300;
+			line-height: 24px;
+		}
+
+		.img-item {
+			display: block;
+			width: 46px;
+			height: 40px;
+			margin: 4px auto;
+		}
+	}
+}
+
+.parallax-window {
+	position: relative;
+    min-height: 342px;
+    width: 100%;
+    max-width: 1230px;
+    margin: auto;
+    background: transparent;
+}
+
+/* ============= banner parallax section END ============= */

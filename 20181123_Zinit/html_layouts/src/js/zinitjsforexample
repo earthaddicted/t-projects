@@ -1,0 +1,361 @@
+$(document).ready(function () {
+
+    var body = $('body'),
+        bodyHtml = $('body, html'),
+        arrowTop = $('.arrow-top'),
+        fixedHeaderShow = 'show-fixed',
+        fixedHeaderClass = 'header-fixed',
+        showArrow = 'show-arrow',
+        currentPageItem = 'current-page-item',
+        sectionTabs = $('.section-tabs:not(.not-anchor)'),
+        fixedMenuHeight = 70;
+
+
+    $('.first-sub-menu').each(function (i, e) {
+        var menuWidth = $(e).width().toFixed() + 'px';
+        $(e).find('.second-sub-menu').css('left', menuWidth);
+    });
+
+    $(window).on('scroll resize', function () {
+        if ($(window).width() >= 1200) {
+            var scrollTop = $(window).scrollTop();
+            scrollTop === 0 ? body.removeClass(fixedHeaderClass) : body.addClass(fixedHeaderClass);
+            scrollTop < 300 ? body.removeClass(fixedHeaderShow) : body.addClass(fixedHeaderShow);
+        }
+    });
+
+    $('.parallax-window').parallax({
+        speed: 0.05
+    });
+
+    arrowTop.on('click', function () {
+        bodyHtml.animate({
+            scrollTop: bodyHtml.offset().top
+        }, 500);
+    });
+
+    $(window).on('scroll', function () {
+        var scrollTop = $(window).scrollTop();
+        scrollTop >= 300 ? $(arrowTop).addClass(showArrow) : $(arrowTop).removeClass(showArrow);
+    });
+
+    $('.arrow-down-wrap').on('click', function () {
+        bodyHtml.animate({
+            scrollTop: sectionTabs.offset().top - fixedMenuHeight
+        }, 500);
+    });
+
+    $('.mobile-menu-btn, .mobile-menu-overlay').on('click', function () {
+        body.toggleClass('nav-open');
+    });
+
+    if ($(window).width() < 1200) {
+        $('.has-children > a').on('click', function (e) {
+            e.preventDefault();
+            $(this).next().slideToggle();
+            $(this).parent().toggleClass('active-mob');
+        });
+    }
+
+    var el,
+        leftPos,
+        newWidth,
+        magicLine = $('#magic-line');
+
+    if (magicLine.length) {
+        magicLine
+            .width($('.current-page-item').width())
+            .css('left', $('.current-page-item span').position().left)
+            .data('origLeft', magicLine.position().left)
+            .data('origWidth', magicLine.width());
+
+        $('#move-line-menu li').find('a').hover(function () {
+            el = $(this);
+            leftPos = el.position().left;
+            newWidth = el.parent().width();
+
+            magicLine.stop().animate({
+                left: leftPos,
+                width: newWidth
+            });
+        }, function () {
+            magicLine.stop().animate({
+                left: magicLine.data('origLeft'),
+                width: magicLine.data('origWidth')
+            });
+        });
+    }
+
+    sectionTabs.on('click', 'a', function (event) {
+        event.preventDefault();
+        var id = $(this).attr('href'),
+            top = $(id).offset().top - fixedMenuHeight;
+        bodyHtml.animate({scrollTop: top}, 1000);
+        sectionTabs.find('li').removeClass(currentPageItem);
+        $(this).parent().addClass(currentPageItem);
+        moveLineMenu();
+    });
+
+    $('.homepage-slider, .reviews-slider').slick({
+        dots: true
+    });
+
+    $('.our-references-slider').slick({
+        slidesToShow: 5,
+        slidesToScroll: 5,
+        dots: true,
+        speed: 500,
+        responsive: [
+            {
+                breakpoint: 1920,
+                settings: {
+                    slidesToShow: 4,
+                    slidesToScroll: 4,
+                    speed: 500
+                }
+            },
+            {
+                breakpoint: 1200,
+                settings: {
+                    slidesToShow: 3,
+                    slidesToScroll: 3,
+                    speed: 500
+                }
+            },
+            {
+                breakpoint: 768,
+                settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 2,
+                    speed: 100
+                }
+            },
+            {
+                breakpoint: 480,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                    speed: 100
+                }
+            }
+        ]
+    });
+
+    $('.product-slider').slick({
+        dots: true
+    });
+
+    var owlClick = false,
+        owlDrag = false,
+        goTo = function () {
+            owlClick = true;
+            var $current = $(this).closest('.to-process');
+            var owl = $current.data('owlCarousel');
+            var x = parseInt($(this).index());
+            $current.find('.to-step-nb').add($current.find('.owl-item')).removeClass('active');
+            $(this).add($current.find('.owl-item').eq(x)).addClass('active');
+            $(this).add($current.find('.to-step-nb').eq(x)).addClass('active');
+            owl.goTo(x);
+        };
+
+    $('.to-process').owlCarousel({
+        pagination: false,
+        navigation: false,
+        slideSpeed: 500,
+        afterInit: function (elem) {
+            var page = '';
+            var nb = $(elem).find('.owl-item').length;
+            var first = ' active';
+            if (nb > 1) {
+                for (var i = 1; i <= nb; i++) {
+                    page = page + '<span class="to-step-nb' + first + '">' + 0 + String(i) + '</span>';
+                    first = '';
+                }
+                $(elem).append('<span class="to-step-pages">' + page + '</span>');
+            }
+            $(elem).find('.owl-item').first().addClass('active');
+        },
+        startDragging: function (elem) {
+            owlDrag = true;
+        },
+        afterMove: function (elem) {
+            if (owlClick !== true) {
+                var $current = $(elem).closest('.to-process');
+                var x = this.owl.currentItem;
+                $current.find('.to-step-nb').add($current.find('.owl-item')).removeClass('active');
+                $current.find('.to-step-nb').eq(x).add($current.find('.owl-item').eq(x)).addClass('active');
+            }
+            owlClick = false;
+            owlDrag = false;
+        }
+    });
+
+    $(document).on('click', '.to-process .to-step-nb', goTo);
+    $(document).on('click', '.to-process .owl-item', goTo);
+
+    $('.icons_slide .icon').waypoint(function () {
+        $('.icons_slide .icon').removeClass('active');
+        $(this.element).addClass('active');
+    }, {offset: '50%'});
+
+    $('.lists-analysis h3').on('click', function () {
+        $(this).next().slideToggle();
+        $(this).toggleClass('active');
+    });
+
+    $(".icons_slide .icons_item").hover(function () {
+        $('.icons_slide .icon').removeClass('active');
+        $(this).children('.icon').addClass('active');
+    });
+
+    var width = 0,
+        initProgressBar = false,
+        progressBarEl = $('.progress-bar'),
+        progressBar = function () {
+            progressBarEl.children('.progress-bar_holder').each(function (index, el) {
+                width = $(el).find('div').data('width');
+                $(el).find('span').animate({width: +width + '%'}, 2000);
+            });
+        };
+
+    applyAnimation(progressBarEl, progressBar, initProgressBar);
+
+    var initCountTo = false,
+        number = $('.number'),
+        countTo = function countTo() {
+            number.each(function () {
+                $(this).prop('Counter', 0).animate({
+                    Counter: $(this).data('to')
+                }, {
+                    duration: 5000,
+                    easing: 'swing',
+                    step: function (now) {
+                        $(this).text(Math.ceil(now));
+                    }
+                })
+            })
+        };
+
+    applyAnimation(number, countTo, initCountTo);
+
+    $('.ckeditor-style').find('img').each(function () {
+        if ($(this).css('float') == 'left') {
+            $(this).addClass('fl');
+        }
+        if ($(this).css('float') == 'right') {
+            $(this).addClass('fr');
+        }
+    });
+
+    $('.easyzoom').easyZoom();
+
+    if (isMobileBrowser()) {
+        $(body).addClass('mobile-browser');
+    }
+
+    $('.blog_item_wrap').masonry({
+        itemSelector: '.blog_item_wrap > div'
+    });
+
+    /**
+     * Functions
+     */
+
+    window.sidebar = function () {
+        window.initTextBlockY = 0;
+        window.initTextBlockHeight = 0;
+        var textBlock = $('.sidebar');
+        if (textBlock.length) {
+            $(window).scroll(function () {
+                var headerMargin = $('.header').height(),
+                    windowScroll = window.pageYOffset + headerMargin,
+                    windowBotY = window.innerHeight + windowScroll,
+                    sidebarTop = $('.product-content-right').offset().top,
+                    fixedTextClass = 'fixed-sidebar',
+                    absTextClass = 'abs-sidebar',
+                    contentBlock = $('.product-content'),
+                    contentBotY = contentBlock.offset().top + contentBlock.height(),
+                    absTop = 0,
+                    placeHolder = $('.sidebar-placeholder'),
+                    condition,
+                    botCondition,
+                    top;
+                if (!window.initTextBlockY) {
+                    window.initTextBlockY = textBlock.offset().top + textBlock.height();
+                }
+                if (!window.initTextBlockHeight) {
+                    window.initTextBlockHeight = textBlock.height();
+                }
+                if (window.initTextBlockHeight > window.innerHeight) {
+                    condition = windowBotY >= window.initTextBlockY;
+                    top = 'auto';
+                    botCondition = windowBotY >= contentBotY;
+                } else {
+                    condition = windowScroll >= window.initTextBlockY - window.initTextBlockHeight;
+                    fixedTextClass += '-top';
+                    top = '0';
+                    botCondition = (windowBotY - window.innerHeight + window.initTextBlockHeight) >= contentBotY
+                }
+                if (botCondition) {
+                    placeHolder.css('height', window.initTextBlockHeight + 'px');
+                    absTop = contentBotY - sidebarTop - window.initTextBlockHeight;
+                    textBlock.removeClass(fixedTextClass);
+                    textBlock.addClass(absTextClass).css({
+                        top: absTop + 'px'
+                    });
+                } else {
+                    textBlock.removeClass(absTextClass);
+                    textBlock.css('top', headerMargin);
+                    if (condition) {
+                        placeHolder.css('height', window.initTextBlockHeight + 'px');
+                        textBlock.removeClass(absTextClass);
+                        textBlock.addClass(fixedTextClass);
+                    } else {
+                        placeHolder.css('height', 0);
+                        textBlock.removeClass(fixedTextClass);
+                    }
+                }
+            });
+        }
+    };
+
+    function isMobileBrowser() {
+        var mobilesRegexp = [
+                /Android/i,
+                /webOS/i,
+                /iPhone/i,
+                /iPad/i,
+                /iPod/i,
+                /BlackBerry/i,
+                /Android/i,
+                /Windows Phone/i
+            ],
+            result = false;
+        mobilesRegexp.forEach(function (regexp) {
+            if (navigator.userAgent.match(regexp)) {
+                result = true;
+            }
+        });
+        return result;
+    }
+
+    function applyAnimation(el, func, init) {
+        var pos = 0;
+
+        if (el.length) {
+            pos = $('.animation-block').offset().top / 2;
+            $(window).on('scroll', function () {
+                var scrollTop = $(window).scrollTop();
+                if (!init && scrollTop > pos) {
+                    func();
+                    init = true;
+                }
+            });
+        }
+    }
+
+    window.sidebar();
+
+    PDFObject.embed("/files/muster_usability_auswertung_unlesbar.pdf", "#pdf-viewer");
+
+});

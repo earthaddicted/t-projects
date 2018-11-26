@@ -1,0 +1,168 @@
+/* ============= slider section ============= */
+.slider-wrapper {
+    position: relative;
+    width: 100%;
+    min-height: 450px;
+}
+
+.slider {
+    &-item {
+        position: relative;
+        height: 100%;
+        min-height: 460px;
+
+        &__wrapper {
+        	height: 100%;
+        }
+
+        &__text {
+        	margin: auto;
+        	max-width: 476px;
+        	width: 100%;
+        	padding: 10px;
+        	padding-top: 12.6%;
+        	letter-spacing: 1.1px;
+        	text-align: center;
+
+        	p {
+        		color: $darkgrey;
+        		text-align: center;
+        		font-size: 16px;
+        		line-height: 26px;
+        		padding: 16px 0;
+        	}
+        }
+
+        img {
+            width: initial;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            -webkit-transform: translate(-50%, -50%);
+            -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+            z-index: -1;
+            // background-size: cover;
+            height: 100%;
+        }
+    }
+}
+
+.slick-slider {
+    width: 100%;
+    opacity: 0;
+}
+
+.slick-slider.slick-initialized {
+    opacity: 1;
+}
+
+.slick-slider {
+
+    .slick-prev,
+    .slick-next {
+        z-index: 100;
+        width: 32px;
+        height: 60px;
+        top: 50%;
+        transform: translateY(-50%);
+        position: absolute;
+        text-align: right;
+        color: #000;
+        cursor: pointer;
+    }
+
+	.slick-prev {
+		left: 44px;
+
+	    &::before {
+	        display: block;
+	        content: " ";
+	        width: 32px;
+	        height: 60px;
+	        transform: rotate(180deg);
+	        background: url('../../images/icons/arrow-r.svg') no-repeat !important;
+	    }
+	}
+
+    .slick-next {
+        right: 44px;
+    }
+}
+
+.sr-text {
+    position: absolute !important;
+    top: -9999px !important;
+    left: -9999px !important;
+}
+
+.slick-next {
+    &::before {
+        display: block;
+        content: " ";
+        width: 32px;
+        height: 60px;
+        background: url('../../images/icons/arrow-r.svg') no-repeat !important;
+    }
+}
+
+.slick-prev:hover:before,
+.slick-prev:focus:before {
+    transform: rotate(180deg);
+    background: url('../../images/icons/arr-blue.svg') no-repeat !important;
+}
+
+.slick-next:hover:before,
+.slick-next:focus:before {
+    background: url('../../images/icons/arr-blue.svg') no-repeat !important;
+}
+
+.slick-dots {
+    text-align: center;
+    bottom: 25px;
+    padding-top: 15px;
+
+    li {
+        display: inline-block;
+        vertical-align: top;
+        margin: 0 2px;
+
+        button {
+            width: 16px;
+            height: 16px;
+            border: none;
+            cursor: pointer;
+            border-radius: 50%;
+            border: 3px solid $lightgrey;
+            vertical-align: middle;
+            color: $white;
+            background-color: $white;
+            transition: all .3s ease;
+
+            &:focus {
+                outline: none;
+            }
+
+            &::before {
+            	color: transparent;
+            }
+        }
+
+        &.slick-active {
+            button {
+                border: 3px solid $blue;
+                opacity: 1;
+
+                 &::before {
+	            	color: transparent;
+	            }
+            }
+        }
+    }
+}
+
+.slick-dotted.slick-slider {
+    margin-bottom: 0 !important;
+}
+
+/* ============= slider section END ============= */

@@ -1,0 +1,96 @@
+@import '../settings';
+
+/* ============= navigation top section ============= */
+
+.nav-top__section {
+	.content-wrapper {
+		padding: 6px 10px;
+		background-color: $lightblue;
+		overflow: hidden;
+	}
+
+	.nav-menu {
+		display: flex;
+		align-items: center;
+		width: 100%;
+
+		&__block {
+			display: flex;
+			align-items: center;
+			flex-grow: 2;
+			padding-left: 10px;
+		}
+
+		&__item {
+			&:nth-of-type(n+2){
+				a {
+					margin-left: 47px;
+				}
+			}
+		}
+
+		&__ancor {
+			color: $darkgrey;
+			font-size: 16px;
+			font-weight: 400;
+			padding: 5px 14px;
+			letter-spacing: 1px;
+
+			&:hover {
+				color: $blue;
+			}
+
+			&-special {
+				color: $blue;
+				margin-left: 65px !important;
+
+				&:hover {
+					color: $blue;
+				}
+			}
+		}
+	}
+}
+
+.btn-fonts {
+	display: flex;
+	flex-grow: 1;
+	min-width: 100px;
+	margin: 0 15px;
+	justify-content: space-between;
+
+
+	&__item {
+		text-transform: uppercase;
+		background: transparent;
+		border-radius: 50%;
+		border: 0 solid transparent;
+		@include transition-ease-in-out;
+		min-height: 28px;
+		min-width: 28px;
+		width: 28px;
+		text-align: center;
+
+		&.active,
+		&:hover {
+			background: $blue;
+		}
+	}
+
+	&__small {
+		font-size: 10px;
+		color: $white;
+	}
+
+	&__regular {
+		font-size: 12px;
+		color: $white;
+	}
+
+	&__large {
+		font-size: 14px;
+		color: #000;
+	}
+}
+
+/* ============= navigation top section END ============= */
