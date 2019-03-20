@@ -78,7 +78,7 @@ $('.parallax-window').parallax({
 
 
 /* ========== nav menu bottom accordion ==========  */
-$(function() {
+$(function() { 
 	var Accordion = function(el, multiple) {
 		this.el = el || {};
 		this.multiple = multiple || false;

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, maximum-scale=1.0">
+	<title>Overwolf Test</title>
+	<link rel="icon" type="image/png" href="img/favicon.png">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/rangeslider.js/2.3.0/rangeslider.min.css">
+	<link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+	<main>
+		<section>
+			<div class="section-wrapper">
+				<div class="range-block">
+					<!-- value larger or equal to 80% -->
+					<div class="range-wrapper range-green">
+						<input type="range" value="90" data-orientation="vertical">
+						<output></output>
+					</div>
+					<!-- value smaller than 80% -->
+					<div class="range-wrapper range-red">
+						<input type="range" value="60" data-orientation="vertical">
+						<output></output>
+					</div>
+				</div>
+
+				<!-- without js -->
+				<!-- <div class="range-block">
+					<div class="range-wrapper range-green">
+						<input type="range" value="90" data-orientation="vertical">
+						<div class="rangeslider rangeslider--vertical" id="js-rangeslider-0">
+							<div class="rangeslider__fill" style="height: 525.6px;"></div>
+							<div class="rangeslider__handle" style="bottom: 507.6px;"></div>
+						</div>
+						<output>60</output>
+					</div>
+
+					<div class="range-wrapper range-red">
+						<input type="range" value="60"data-orientation="vertical">
+						<div class="rangeslider rangeslider--vertical" id="js-rangeslider-1">
+							<div class="rangeslider__fill" style="height: 356.4px;"></div>
+							<div class="rangeslider__handle" style="bottom: 338.4px;"></div>
+						</div>
+						<output></output>
+					</div>
+				</div> -->
+				<!--  without js END -->
+			</div>
+		</section>
+	</main>
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/rangeslider.js/2.3.0/rangeslider.min.js"></script>
+<script src="js/script.js"></script>
+
+</html>

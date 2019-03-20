@@ -1,0 +1,165 @@
+/*. just for the page to look nice */
+html,
+body {
+	height: 100%;
+	max-width: 100vw;
+}
+
+body {
+	display: flex;
+	flex-direction: column;
+	position: relative;
+	overflow-x: hidden;
+}
+
+main {
+	flex: 1 0 auto;
+	background: #17181C;
+}
+
+img {
+	max-width: 100%;
+	height: auto;
+}
+
+.section-wrapper {
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: -o-flex;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	max-width: 1920px;
+	width: 100%;
+	margin: auto;
+	padding: 100px 20px;
+}
+
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding-right: 0;
+}
+
+/* ===== range slider settings ===== */
+.range-block {
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: -o-flex;
+	display: flex;
+}
+
+.range-block input[type='range'] {
+	display: none;
+}
+
+.rangeslider--vertical {
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: -o-flex;
+	display: flex;
+	justify-content: center;
+	position: relative;
+	width: 72px;
+	min-height: 0px;
+    max-height: 100%;
+    margin: 40px;
+	height: 600px;
+	z-index: 1;
+	background: transparent;
+	border: none !important;
+	border-radius: 0;
+	box-shadow: none;
+	outline: none;
+}
+
+.rangeslider__fill {
+	width: 58px !important;
+	height: 590px;
+	margin: 0 auto;
+	background-image:  url('../img/chevron_up.svg'), linear-gradient(180deg, #C59A43 0%, #261F12 99.19%);
+	background-repeat: repeat, no-repeat;
+	background-size: 62px 35px, cover;
+	background-position: top center;
+	bottom: 0;
+	border-radius: 0;
+	box-shadow: none;
+}
+
+.rangeslider__fill::after {
+	display: block;
+	content: " ";
+	position: absolute;
+	bottom: 0;
+	top: 4px;
+	left: 50%;
+	transform: translateX(-50%);
+	width: 68px;
+	border: 2px solid transparent;
+	border-image: linear-gradient(180deg, #C59A43 0%, #261F12 99.19%);
+	border-image-slice: 1;
+	z-index: -1;
+}
+
+.rangeslider--active .rangeslider__handle,
+.rangeslider__handle,
+.rangeslider__handle:active {
+	background: url('../img/trend_up.svg') no-repeat 50% 50%;
+	-webkit-background-size: cover;
+	background-size: cover;
+	height: 36px;
+	width: 36px;
+	display: block;
+	border: none !important;
+	outline: none;
+	margin: auto;
+	box-shadow: none;
+}
+
+.rangeslider--vertical .rangeslider__handle {
+	left: 50%;
+	transform: translateX(-50%);
+}
+
+output {
+	display: none;
+}
+
+/* when value >= 80% */
+.range-green .rangeslider__fill {
+	background-image:  url('../img/chevron_up.svg'), linear-gradient(180deg, #C59A43 0%, #261F12 99.19%);
+}
+
+.range-green .rangeslider--active .rangeslider__handle,
+.range-green .rangeslider__handle,
+.range-green .rangeslider__handle:active  {
+	background: url('../img/trend_up.svg') no-repeat 50% 50%;
+}
+
+/* when value < 80% */
+.range-red .rangeslider__fill {
+	background-image:  url('../img/chevron_down.svg'), linear-gradient(180deg, #C59A43 0%, #261F12 99.19%);
+}
+
+.range-red .rangeslider--active .rangeslider__handle,
+.range-red .rangeslider__handle,
+.range-red .rangeslider__handle:active  {
+	background: url('../img/trend_down.svg') no-repeat 50% 50%;
+}
+
+/* ===== range slider settings END ===== */
+
+/* styles for input range without  js */
+.range-block input[type='range'] {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	overflow: hidden;
+	opacity: 0;
+}
+
+
+
