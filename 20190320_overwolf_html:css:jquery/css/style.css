@@ -160,17 +160,3 @@ output {
 	overflow: hidden;
 	opacity: 0;
 }
-
-/* for small screen */
-
-@media screen and (max-height: 700px) {
-	.rangeslider--vertical {
-		height: 70vh;
-		margin: 5vh 3vw;
-	}
-
-	.rangeslider__fill {
-		height: 67vh;
-	}
-}
-/* for small screen END  */
